@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { GestionEquipaje } from './gestion_equipaje/page';
+import GestionEquipaje from './gestion_equipaje/page';
 
 const Home: NextPage = () => {
   return (

@@ -4,7 +4,7 @@ import InfoSection from "components/templates/gestion-equipaje/infoSection";
 import Navbar from "components/organisms/gestion-equipaje/navbar";
 import RecommendationSection from "components/templates/gestion-equipaje/recommendationSection";
 
-export const GestionEquipaje = () => {
+const GestionEquipaje = () => {
     return (
         <div>
             <Navbar/>
@@ -15,3 +15,5 @@ export const GestionEquipaje = () => {
         </div>
     );
   }
+
+export default GestionEquipaje;

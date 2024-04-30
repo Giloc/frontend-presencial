@@ -7,7 +7,6 @@ const Navbar = () => {
     <div className="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-cyan-500">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          {/* <img src={takeOffLogo} className="h-12" alt="TakeOff Logo" /> */}
           <Image src={takeOffLogo} alt="TakeOff" height={48} width={48} className=" h-12"></Image>
 
           <span className="self-center whitespace-nowrap text-2xl font-semibold">Singapur Airlines</span>

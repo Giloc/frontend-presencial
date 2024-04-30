@@ -1,4 +1,9 @@
-import React from "react"
+'use client';
+import React, { useState } from "react"
+import LuggageForm from "./form"
+import luggageLogo from 'public/luggage.svg';
+import Image from "next/image";
+
 
 export const BaggageCard = ({
   title,
@@ -9,22 +14,27 @@ export const BaggageCard = ({
   description: string
   information: string
 }) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
-    <div className="  max-w-sm overflow-hidden rounded border border-cyan-500 px-6 py-10 text-center shadow-lg ">
-      <h2 className="mb-4 text-center text-2xl font-semibold">{title}</h2>
-      <div className="mb-4 text-center">
-        <p>{information}</p>
-        <p>{description}</p>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border border-cyan-500 px-6 py-10 text-center">
+      <h2 className="text-2xl font-semibold mb-4 text-center">{title}</h2>
+      <div className="text-center mb-4">
+        <Image src={luggageLogo} alt="Luggage" className="mx-auto h-32 w-32 mb-2"></Image>
+        <p className="text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
       </div>
       <div className="text-center">
-        <div className="inline-flex">
-          <button className="rounded-l bg-gray-300 px-4 py-2 font-bold text-gray-800 hover:bg-gray-400">-</button>
-          <button type="button" className="rounded bg-gray-300 px-4 py-2 font-bold text-gray-800 hover:bg-gray-400">
-            0
-          </button>
-          <button className="rounded-r bg-gray-300 px-4 py-2 font-bold text-gray-800 hover:bg-gray-400">+</button>
-        </div>
+        <button
+          onClick={handleOpen}
+          type="button"
+          className="text-cyan-500 border-2 border-cyan-500 px-4 py-2 rounded-lg hover:bg-cyan-100">
+          Agregar Equipaje
+        </button>
       </div>
+      <LuggageForm open={open} handleClose={handleClose}></LuggageForm>
     </div>
   )
 }
